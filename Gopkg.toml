@@ -37,7 +37,7 @@
   name = "github.com/giantswarm/certs"
 
 [[constraint]]
-  branch = "master"
+  branch = "guest-access"
   name = "github.com/giantswarm/e2e-harness"
 
 [[constraint]]
@@ -79,6 +79,10 @@
 [[constraint]]
   name = "github.com/go-kit/kit"
   version = "0.6.0"
+
+[[constraint]]
+  name = "github.com/go-resty/resty"
+  version = "1.0.0"
 
 [[constraint]]
   branch = "master"

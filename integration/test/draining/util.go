@@ -1,4 +1,6 @@
-package framework
+// +build k8srequired
+
+package draining
 
 import (
 	"log"
