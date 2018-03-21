@@ -1,8 +1,6 @@
 package awsconfig
 
 import (
-	"fmt"
-
 	"github.com/giantswarm/apiextensions/pkg/apis/provider/v1alpha1"
 	"github.com/giantswarm/apiextensions/pkg/clientset/versioned"
 	"github.com/giantswarm/certs/legacy"
@@ -174,8 +172,6 @@ func newClusterResourceRouter(config ClusterFrameworkConfig) (*framework.Resourc
 		SessionToken:    config.HostAWSConfig.SessionToken,
 		Region:          config.HostAWSConfig.Region,
 	}
-	config.Logger.Log("debug", fmt.Sprintf("guest config: %+v", guestAWSConfig))
-	config.Logger.Log("debug", fmt.Sprintf("host config: %+v", hostAWSConfig))
 	awsClients := awsclient.NewClients(guestAWSConfig)
 
 	awsHostClients := awsclient.NewClients(hostAWSConfig)

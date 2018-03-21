@@ -27,6 +27,9 @@ func (r *Resource) ApplyCreateChange(ctx context.Context, obj, createChange inte
 
 		_, err = r.clients.S3.CreateBucket(&s3.CreateBucketInput{
 			Bucket: aws.String(bucketInput.Name),
+			CreateBucketConfiguration: &s3.CreateBucketConfiguration{
+				LocationConstraint: aws.String("eu-central-1"),
+			},
 		})
 		if IsBucketAlreadyExists(err) || IsBucketAlreadyOwnedByYou(err) {
 			// Fall through.
